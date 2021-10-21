@@ -18,7 +18,7 @@ output "aws_subnet_subnet_dev1" {
 
 resource "aws_subnet" "subnet_prod1" {
   vpc_id     = "vpc-0c8a47d4fabd75584"
-  cidr_block = "10.0.0.0/24"
+  cidr_block = "10.0.9.0/24"
   map_public_ip_on_launch = true
   availability_zone = "us-east-1b"
 
