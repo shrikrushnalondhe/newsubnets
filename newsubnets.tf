@@ -1,3 +1,6 @@
+provider "aws" {
+  region = "us-east-1"
+}
 ## Create Subnets ##
 resource "aws_subnet" "subnet_dev1" {
   vpc_id     = "vpc-0c8a47d4fabd75584"
