@@ -31,8 +31,8 @@ output "aws_subnet_subnet_prod1" {
   value = "${aws_subnet.subnet_prod1.id}"
 }
 
-  backend "s3" {
-    bucket = "terraform1-state-bucket"
-    key    = "state/terraform_state.tfstate"
-    region = "us-east-1"
-  }
+  # backend "s3" {
+  # bucket = "terraform1-state-bucket"
+  #  key    = "state/terraform_state.tfstate"
+  # region = "us-east-1"
+  #}
