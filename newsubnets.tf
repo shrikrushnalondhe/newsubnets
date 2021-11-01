@@ -3,7 +3,7 @@ provider "aws" {
 }
 ## Create Subnets ##
 resource "aws_subnet" "subnet_dev1" {
-  vpc_id     = "vpc-0f336485d30a2f3bc"
+  vpc_id     = "vpc-0413727213c90fd60"
   cidr_block = "10.0.1.0/24"
   map_public_ip_on_launch = true
   availability_zone = "us-east-1a"
@@ -17,7 +17,7 @@ output "aws_subnet_subnet_dev1" {
 }
 
 resource "aws_subnet" "subnet_prod1" {
-  vpc_id     = "vpc-0f336485d30a2f3bc"
+  vpc_id     = "vpc-0413727213c90fd60"
   cidr_block = "10.0.2.0/24"
   map_public_ip_on_launch = true
   availability_zone = "us-east-1b"
@@ -29,19 +29,6 @@ resource "aws_subnet" "subnet_prod1" {
 
 output "aws_subnet_subnet_prod1" {
   value = "${aws_subnet.subnet_prod1.id}"
-}
-
-resource "aws_alb" "application_load_balancer" {
-  name               = "${var.app_name}-${var.app_environment}-alb"
-  internal           = false
-  load_balancer_type = "application"
-  subnets            = aws_subnet.public.*.id
-  security_groups    = [aws_security_group.load_balancer_security_group.id]
-
-  tags = {
-    Name        = "${var.app_name}-alb"
-    Environment = var.app_environment
-  }
 }
 
 terraform {
