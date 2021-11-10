@@ -1,14 +1,3 @@
-provider "aws" {
-  region = "us-east-1"
-}
-resource "aws_internet_gateway" "default" {
-    vpc_id = "vpc-0413727213c90fd60"
-        tags = {
-        Name = "igw-ac9731d6"
-    }
-}
-
-## Create Subnets ##
 resource "aws_subnet" "subnet_dev" {
   vpc_id     = "vpc-0413727213c90fd60"
   cidr_block = "10.0.1.0/24"
