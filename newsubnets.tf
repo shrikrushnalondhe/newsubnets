@@ -48,9 +48,9 @@ resource "aws_route_table_association" "terraform-public" {
     route_table_id = "rtb-07a66d41e9e544274"
 }
 
-resource "aws_security_group" "allow_all" {
+resource "aws_security_group" "DemoSG" {
   name        = "DemoSG"
-  description = "Allow all inbound traffic"
+  description = "Allow inbound traffic"
   vpc_id      = "vpc-0413727213c90fd60"
 
   ingress {
@@ -60,12 +60,12 @@ resource "aws_security_group" "allow_all" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
-    }
+   egress {
+    protocol    = "all"
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+  }
 }
 
 #data "aws_ami" "my_ami" {
