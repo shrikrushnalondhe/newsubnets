@@ -1,3 +1,6 @@
+provider "aws" {
+  region = "us-east-1"
+}
 resource "aws_subnet" "subnet_dev" {
   vpc_id     = "vpc-0413727213c90fd60"
   cidr_block = "10.0.1.0/24"
