@@ -81,7 +81,7 @@ resource "aws_instance" "dev" {
     instance_type = "t2.micro"
     key_name = "aws_key"
     subnet_id = "${aws_subnet.subnet_dev.id}"
-    vpc_security_group_ids = ["${aws_security_group.DemoSG.id}"]
+    vpc_security_group_ids = ["${aws_security_group.DemoSG1.id}"]
     associate_public_ip_address = true
     tags = {
         Name = "dev"
@@ -109,7 +109,7 @@ resource "aws_instance" "prod" {
     instance_type = "t2.micro"
     key_name = "aws_key"
     subnet_id = "${aws_subnet.subnet_prod.id}"
-    vpc_security_group_ids = ["${aws_security_group.DemoSG.id}"]
+    vpc_security_group_ids = ["${aws_security_group.DemoSG1.id}"]
     associate_public_ip_address = true
     tags = {
         Name = "prod"
