@@ -45,7 +45,7 @@ resource "aws_route_table" "terraform-public" {
 
 resource "aws_route_table_association" "terraform-public" {
     subnet_id = "${aws_subnet.subnet_dev.id}"
-   # route_table_id = "rtb-07a66d41e9e544274" #
+    route_table_id = "rtb-05685f3c486e14a30"
 }
 
 resource "aws_security_group" "DemoSG" {
