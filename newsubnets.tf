@@ -3,7 +3,7 @@ provider "aws" {
 }
 resource "aws_subnet" "subnet_dev" {
   vpc_id     = "vpc-0413727213c90fd60"
-  cidr_block = "10.0.1.0/24"
+  cidr_block = "10.0.4.0/24"
   map_public_ip_on_launch = true
   availability_zone = "us-east-1a"
 
@@ -17,7 +17,7 @@ output "aws_subnet_subnet_dev" {
 
 resource "aws_subnet" "subnet_prod" {
   vpc_id     = "vpc-0413727213c90fd60"
-  cidr_block = "10.0.2.0/24"
+  cidr_block = "10.0.5.0/24"
   map_public_ip_on_launch = true
   availability_zone = "us-east-1b"
 
@@ -45,7 +45,7 @@ resource "aws_route_table" "terraform-public" {
 
 resource "aws_route_table_association" "terraform-public" {
     subnet_id = "${aws_subnet.subnet_dev.id}"
-    route_table_id = "rtb-07a66d41e9e544274"
+   # route_table_id = "rtb-07a66d41e9e544274" #
 }
 
 resource "aws_security_group" "DemoSG" {
