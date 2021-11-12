@@ -49,7 +49,7 @@ resource "aws_route_table_association" "terraform-public" {
 }
 
 resource "aws_security_group" "DemoSG" {
-  name        = "DemoSG"
+  name        = "DemoSG1"
   description = "Allow inbound traffic"
   vpc_id      = "vpc-0413727213c90fd60"
 
