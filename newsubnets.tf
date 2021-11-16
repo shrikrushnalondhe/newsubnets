@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 resource "aws_subnet" "subnet_dev" {
-  vpc_id     = "vpc-0413727213c90fd60"
+  vpc_id     = "vpc-0fd770e642b0ad2a6"
   cidr_block = "10.0.4.0/24"
   map_public_ip_on_launch = true
   availability_zone = "us-east-1a"
@@ -16,7 +16,7 @@ output "aws_subnet_subnet_dev" {
 }
 
 resource "aws_subnet" "subnet_prod" {
-  vpc_id     = "vpc-0413727213c90fd60"
+  vpc_id     = "vpc-0fd770e642b0ad2a6"
   cidr_block = "10.0.5.0/24"
   map_public_ip_on_launch = true
   availability_zone = "us-east-1b"
@@ -85,8 +85,8 @@ resource "aws_instance" "dev" {
     associate_public_ip_address = true
     tags = {
         Name = "dev"
-        Env = "dev"
-        Owner = "dev"
+      #  Env = "dev"
+      #  Owner = "dev"
     }
 connection {
       type        = "ssh"
@@ -113,8 +113,8 @@ resource "aws_instance" "prod" {
     associate_public_ip_address = true
     tags = {
         Name = "prod"
-        Env = "prod"
-        Owner = "prod"
+       # Env = "prod"
+       # Owner = "prod"
     }
 }
 #output "ami_id" {
