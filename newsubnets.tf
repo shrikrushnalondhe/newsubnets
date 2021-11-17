@@ -31,7 +31,7 @@ output "aws_subnet_subnet_prod" {
 }
 
 resource "aws_route_table" "terraform-public" {
-    vpc_id = "vpc-0413727213c90fd60"
+    vpc_id = "vpc-0fd770e642b0ad2a6"
 
     route {
         cidr_block = "0.0.0.0/0"
@@ -45,13 +45,13 @@ resource "aws_route_table" "terraform-public" {
 
 #resource "aws_route_table_association" "terraform-public" {
  #   subnet_id = "${aws_subnet.subnet_dev.id}"
-  #  route_table_id = "rtb-05685f3c486e14a30"
+  #  route_table_id = "rtb-05f23f7d0b2816886"
 #}
 
 resource "aws_security_group" "DemoSG1" {
   name        = "DemoSG1"
   description = "Allow inbound traffic"
-  vpc_id      = "vpc-0413727213c90fd60"
+  vpc_id      = "vpc-0fd770e642b0ad2a6"
 
   ingress {
     from_port   = 80
